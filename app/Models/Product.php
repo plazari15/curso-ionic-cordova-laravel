@@ -3,17 +3,26 @@
 namespace CodeDelivery\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Prettus\Repository\Contracts\Transformable;
+use Prettus\Repository\Traits\TransformableTrait;
 
-class Product extends Model
+class Product extends Model implements Transformable
 {
+    use TransformableTrait;
+
     protected $fillable = [
-        'name',
-        'category_id',
-        'description',
-        'price'
+        'product_id',
+        'order_id',
+        'price',
+        'qtd'
     ];
 
-    public function category(){
-        return $this->belongsTo(Category::class);
+    public function order(){
+        return $this->belongsTo(Order::class);
     }
+
+    public function product(){
+        return $this->belongsTo(Product::class);
+    }
+
 }
