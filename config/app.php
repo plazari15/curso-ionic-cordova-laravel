@@ -144,6 +144,7 @@ return [
          */
         CodeDelivery\Providers\AppServiceProvider::class,
         CodeDelivery\Providers\AuthServiceProvider::class,
+        CodeDelivery\Providers\RepositoryServiceProvider::class,
         CodeDelivery\Providers\EventServiceProvider::class,
         CodeDelivery\Providers\RouteServiceProvider::class,
 
