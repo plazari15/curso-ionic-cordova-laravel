@@ -6,21 +6,12 @@
 
         <br>
 
-        @if($errors->any())
-            <ul class="alert">
-                @foreach($errors->all() as $error)
-                    <li>{{$error}}</li>
-                @endforeach
-            </ul>
-        @endif
+        @include('errors._check')
         <br>
 
         {!! Form::open(['route' => 'admin.categories.store']) !!}
-            <!-- Name form input -->
-            <div class="form-group">
-                {!! Form::label('Name','Nome:') !!}
-                {!! Form::text('name',null, ['class' => 'form-control']) !!}
-            </div>
+
+        @include('admin.categories._form')
 
             <div class="form-group">
                 {!! Form::submit('Criar Categoria', ['class' => 'btn btn-primary']) !!}
