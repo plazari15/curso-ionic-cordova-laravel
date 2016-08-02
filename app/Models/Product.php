@@ -21,7 +21,10 @@ class Product extends Model implements Transformable
         return $this->belongsTo(Order::class);
     }
 
-    public function product(){
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function products(){
         return $this->belongsTo(Product::class);
     }
 
