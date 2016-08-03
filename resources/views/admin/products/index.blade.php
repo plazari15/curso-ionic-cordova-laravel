@@ -25,7 +25,7 @@
             <tr>
                 <td>{{ $product->id }}</td>
                 <td>{{ $product->name }}</td>
-                <td>{{ $product->category }}</td>
+                <td>{{ $product->category->name }}</td>
                 <td>
                     <a href="{{route('admin.products.edit', ['id'=>$product->id])}}" class="btn btn-default btn-small">
                         Editar
