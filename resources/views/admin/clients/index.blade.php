@@ -6,7 +6,7 @@
 
         <br>
 
-        <a href="{{ route('admin.clients.create') }}" class="btn btn-default">Nova Categoria</a>
+        <a href="{{ route('admin.clients.create') }}" class="btn btn-default">Novo Cliente</a>
 
         <br>
 
