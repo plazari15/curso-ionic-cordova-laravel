@@ -3,6 +3,9 @@
 namespace CodeDelivery\Http\Controllers;
 
 use CodeDelivery\Http\Requests\AdminCategoryRequest;
+use CodeDelivery\Http\Requests\AdminProductRequest;
+use CodeDelivery\Models\Category;
+use CodeDelivery\Repositories\CategoryRepository;
 use CodeDelivery\Repositories\ProductRepository;
 use Illuminate\Http\Request;
 
@@ -10,10 +13,12 @@ use Illuminate\Http\Request;
 class ProductsController extends Controller
 {
     private $repository;
+    private $CategoryRepository;
 
-    public function __construct(ProductRepository $repository)
+    public function __construct(ProductRepository $repository, CategoryRepository $categoryRepository)
     {
         $this->repository = $repository;
+        $this->CategoryRepository = $categoryRepository;
     }
 
     public function index(){
@@ -23,28 +28,36 @@ class ProductsController extends Controller
 
 
     public function create(){
-
-        return view('admin.categories.create');
+        $categories = $this->CategoryRepository->lista();
+        return view('admin.products.create', compact('categories'));
     }
 
-    public function store(AdminCategoryRequest $request){
+    public function store(AdminProductRequest $request){
         $data = $request->all();
         $this->repository->create($data);
 
-        return redirect()->route('admin.categories.index');
+        return redirect()->route('admin.products.index');
     }
 
     public function edit($id){
 
-        $category = $this->repository->find($id);
+        $product = $this->repository->find($id);
+        $categories = $this->CategoryRepository->lista();
 
-        return view('admin.categories.edit', compact('category'));
+        return view('admin.products.edit', compact('product', 'categories'));
     }
 
-    public function update(AdminCategoryRequest $request, $id){
+    public function update(AdminProductRequest $request, $id){
         $data = $request->all();
         $this->repository->update($data, $id);
 
-        return redirect()->route('admin.categories.index');
+        return redirect()->route('admin.products.index');
+    }
+
+    public function destroy($id){
+        $this->repository->delete($id);
+
+        return redirect()->route('admin.products.index');
+        
     }
 }

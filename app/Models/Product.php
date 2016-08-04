@@ -12,8 +12,11 @@ class Product extends Model implements Transformable
 
     protected $fillable = [
         'product_id',
+        'category_id',
         'order_id',
         'price',
+        'name',
+        'description',
         'qtd'
     ];
 

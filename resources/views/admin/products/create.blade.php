@@ -2,19 +2,19 @@
 
 @section('content')
     <div class="container">
-        <h3>Nova Categoria</h3>
+        <h3>Novo Produto</h3>
 
         <br>
 
         @include('errors._check')
         <br>
 
-        {!! Form::open(['route' => 'admin.categories.store']) !!}
+        {!! Form::open(['route' => 'admin.products.store']) !!}
 
-        @include('admin.categories._form')
+        @include('admin.products._form')
 
             <div class="form-group">
-                {!! Form::submit('Criar Categoria', ['class' => 'btn btn-primary']) !!}
+                {!! Form::submit('Criar Produto', ['class' => 'btn btn-primary']) !!}
             </div>
 
 
