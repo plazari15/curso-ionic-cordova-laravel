@@ -17,13 +17,17 @@ class Order extends Model implements Transformable
         'status'
     ];
 
+    //Vai pegar todos os itens do pedido
     public function items(){
         return $this->hasMany(OrderItem::class);
     }
 
+    //Vai acessar um determinado model de quem tem aquele id
     public function deliveryman(){
         return $this->belongsTo(User::class);
     }
+
+    //Vai obter todos os produtos
     public function products(){
         return $this->hasMany(Product::class);
     }
