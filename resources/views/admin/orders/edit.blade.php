@@ -2,23 +2,31 @@
 
 @section('content')
     <div class="container">
-        <h3>Editar Produto '{{orders->name}}'</h3>
+        <h2>Pedido #{{$order->id}} - R$ {{$order->total}}</h2>
+        <h3>Cliente: {{$order->client->user->name}}</h3>
+        <h4>Data: {{$order->created_at}}</h4>
 
+        <p>
+            <b>Entregar em:</b><br>
+            {{$order->client->address}}<br>
+            {{$order->client->city}} - {{$order->client->state}}<br>
+            CEP: {{$order->client->zipcode}}
+        </p>
         <br>
 
-        @include('errors._check')
-        <br>
+        {!! Form::model($order, ['route' => ['admin.orders.update', $order->id]]) !!}
+        @include('admin.orders._form')
 
-        {!! Form::model($product, ['route' => ['admin.products.update', $product->id]]) !!}
-            @include('admin.products._form')
-
-            <div class="form-group">
-                {!! Form::submit('Salvar', ['class' => 'btn btn-primary']) !!}
-            </div>
+        <div class="form-group">
+            {!! Form::submit('Salvar', ['class' => 'btn btn-primary']) !!}
+        </div>
 
 
 
         {!! Form::close() !!}
+
+        @include('errors._check')
+
 
     </div>
 
