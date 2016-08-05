@@ -6,5 +6,7 @@ Este curso é ministrado por Wesley Willians.
 Este código foi inteiramente desenvolvido por Pedro Lazari. Aqui teremos os códigos do Laravel 5.1 propriamente dito e códigos para se criar um app híbrido!
 
 
+Dados para estrutura C9.IO
+
 Root User: plazari
-   Database Name: c9
+Database Name: c9
