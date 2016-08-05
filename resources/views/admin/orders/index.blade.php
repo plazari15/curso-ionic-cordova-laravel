@@ -14,6 +14,7 @@
                 <th>ID</th>
                 <th>Total</th>
                 <th>Data</th>
+                <th>Modificado</th>
                 <th>Itens</th>
                 <th>Entregador</th>
                 <th>Status</th>
@@ -26,7 +27,8 @@
             <tr>
                 <td>#{{ $order->id }}</td>
                 <td>R$ {{ $order->total }}</td>
-                <td>{{ $order->created_at }}</td>
+                <td>{{ $order->created_at->format('d/m/Y H:i:s') }}</td>
+                <td>{{$order->updated_at->format('d/m/Y H:i:s')}}</td>
                 <td>
                     <ul>
                     @foreach($order->items as $item)
