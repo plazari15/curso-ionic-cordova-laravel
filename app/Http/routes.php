@@ -51,4 +51,13 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth.checkrole', 'as' => 'ad
         Route::post('update/{id}', ['as' => 'update', 'uses' => 'OrdersController@update']);
         Route::get('destroy/{id}', ['as' => 'destroy', 'uses' => 'OrdersController@destroy']);
     });
+
+    Route::group(['prefix' => 'cupoms', 'as' => 'cupoms.'], function (){
+        Route::get('/', ['as' => 'index', 'uses' => 'CupomsController@index']);
+        Route::get('create', ['as' => 'create', 'uses' => 'CupomsController@create']);
+        Route::get('edit/{id}', ['as' => 'edit', 'uses' => 'CupomsController@edit']);
+        Route::post('store', ['as' => 'store', 'uses' => 'CupomsController@store']);
+        Route::post('update/{id}', ['as' => 'update', 'uses' => 'CupomsController@update']);
+        Route::get('destroy/{id}', ['as' => 'destroy', 'uses' => 'CupomsController@destroy']);
+    });
 });
