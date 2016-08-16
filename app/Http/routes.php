@@ -12,7 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+   // return view('welcome');
+
+    $url = parse_url('mysql://bd3f20db335ee8:9e227ffe@us-cdbr-iron-east-04.cleardb.net/heroku_bc58e7a282c6b06?reconnect=true');
+
+    var_dump($url);
 });
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth.checkrole', 'as' => 'admin.'], function (){
