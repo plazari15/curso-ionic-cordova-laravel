@@ -12,7 +12,7 @@
                 <label>Total: </label>
                 <p id="total"></p>
 
-                <a href="#" class="btn btn-default">Novo Item</a>
+                <a href="#" id="btnNewItem" class="btn btn-default">Novo Item</a>
 
                 <table class="table table-bordered">
                     <thead>
@@ -41,3 +41,25 @@
     </div>
 
     @endsection
+
+@section('post-script')
+    <script>
+        $('#btnNewItem').click(function () {
+           var row = $('table tbody > tr:last'),
+                   newRow = row.clone(),
+                   lenght = $("table tbody tr").length;
+
+            newRow.find('td').each(function () {
+                var td = $(this),
+                        input = td.find('input,select'),
+                        name = input.attr('name');
+
+                input.attr('name', name.replace((lenght -1) + "", lenght + "" ) );
+            });
+
+            newRow.find('input').val(1);
+            newRow.insertAfter(row);
+
+        });
+    </script>
+@endsection
