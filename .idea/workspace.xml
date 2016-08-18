@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="964472c3-fc36-4fc0-b66b-f037fa1b8b78" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Services/OrderService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CheckoutController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CheckoutController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/customer/order/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/customer/order/create.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Services/OrderService.php" afterPath="$PROJECT_DIR$/app/Services/OrderService.php" />
     </list>
     <ignored path="delivery.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -61,8 +58,8 @@
       <file leaf-file-name="OrderService.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Services/OrderService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="514">
-              <caret line="71" column="26" selection-start-line="71" selection-start-column="26" selection-end-line="71" selection-end-column="26" />
+            <state relative-caret-position="272">
+              <caret line="21" column="109" selection-start-line="21" selection-start-column="109" selection-end-line="21" selection-end-column="109" />
               <folding>
                 <element signature="e#126#156#0#PHP" expanded="true" />
               </folding>
@@ -405,12 +402,12 @@
       <workItem from="1470764210055" duration="12135000" />
       <workItem from="1470896313657" duration="599000" />
       <workItem from="1471298854669" duration="4494000" />
-      <workItem from="1471492078666" duration="3332000" />
+      <workItem from="1471492078666" duration="3470000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86445000" />
+    <option name="totallyTimeSpent" value="86583000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1378" height="735" extended-state="0" />
@@ -811,8 +808,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Services/OrderService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="71" column="26" selection-start-line="71" selection-start-column="26" selection-end-line="71" selection-end-column="26" />
+        <state relative-caret-position="272">
+          <caret line="21" column="109" selection-start-line="21" selection-start-column="109" selection-end-line="21" selection-end-column="109" />
           <folding>
             <element signature="e#126#156#0#PHP" expanded="true" />
           </folding>

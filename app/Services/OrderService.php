@@ -14,6 +14,13 @@ use CodeDelivery\Repositories\CupomRepository;
 use CodeDelivery\Repositories\OrderRepository;
 use CodeDelivery\Repositories\ProductRepository;
 
+/**
+ * Class OrderService
+ * @package CodeDelivery\Services
+ * EXPLICAÇÃO: Service é um serviço, e nele você coloca a regra de negocio da sua aplicaç~ão, por exemplo
+ * se eu tenho uma aplicação que para ela acontecer ela tem que remover um item do estoque, consultar cupoms
+ * e notificar um departamento e ainda enviar um email para o cliente, eu com certeza devo criar uma service!
+ */
 class OrderService
 {
 
