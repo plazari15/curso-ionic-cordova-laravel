@@ -45,7 +45,7 @@ class OrderService
     }
 
     public function Create(array $data){
-        DB::beginTransaction();
+        \DB::beginTransaction();
         try {
             $data['satus'] = 0;
             if(isset($data['cupom_code'])){

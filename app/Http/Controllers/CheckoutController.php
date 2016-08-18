@@ -53,7 +53,7 @@ class CheckoutController extends Controller
            return $query->where('client_id', '=', $client_id);
         })->paginate();
 
-        dd($orders);
+        return view('customer.order.index', compact('orders'));
     }
 
     public function create()
