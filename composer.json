@@ -10,7 +10,8 @@
         "prettus/l5-repository": "^2.6",
         "bestmomo/scafold": "^1.0",
         "illuminate/html": "^5.0",
-        "fzaninotto/faker": "~1.4"
+        "fzaninotto/faker": "~1.4",
+        "lucadegasperi/oauth2-server-laravel": "5.0.*"
     },
     "require-dev": {
         "mockery/mockery": "0.9.*",
