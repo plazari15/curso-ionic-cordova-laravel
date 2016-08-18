@@ -19,7 +19,6 @@
                     <tr>
                         <th>Produto</th>
                         <th>Quantidade</th>
-                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -35,6 +34,9 @@
                     </tr>
                     </tbody>
                 </table>
+                <div class="form-group">
+                    {!! Form::submit('Criar Pedido', ['class' => 'btn btn-primary']) !!}
+                </div>
             </div>
         {!! Form::close() !!}
 

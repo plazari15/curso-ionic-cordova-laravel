@@ -45,5 +45,9 @@ class CheckoutController extends Controller
         return view('customer.order.create', compact('products'));
     }
 
+    public function store(){
+        
+    }
+
 
 }
