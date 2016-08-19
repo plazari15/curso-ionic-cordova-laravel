@@ -12,11 +12,7 @@
 */
 
 Route::get('/', function () {
-   // return view('welcome');
-
-    $url = parse_url('mysql://bd3f20db335ee8:9e227ffe@us-cdbr-iron-east-04.cleardb.net/heroku_bc58e7a282c6b06?reconnect=true');
-
-    var_dump($url);
+   return view('welcome');
 });
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth.checkrole:admin', 'as' => 'admin.'], function (){
@@ -76,12 +72,24 @@ Route::post('oauth/access_token', function() {
     return Response::json(Authorizer::issueAccessToken());
 });
 
-Route::group(['prefix' => 'api/v1', 'middleware' => 'oauth', 'as' => 'api'], function(){
-    Route::get('pedidos', function(){
-        return [
-            'id' => '1',
-            'client' => 'Pedro',
-            'total' => 10
-        ];
+Route::group(['prefix' => 'api', 'middleware' => 'oauth', 'as' => 'api.'], function(){
+    Route::group(['prefix' => 'client', 'as' => 'client.', 'middleware' => 'oauth.checkrole:client'], function(){
+        Route::get('pedidos', function(){
+            return [
+                'id' => '1',
+                'client' => 'Pedro - Client',
+                'total' => 10
+            ];
+        });
+    });
+
+    Route::group(['prefix' => 'deliveryman', 'as' => 'deliveryman.', 'middleware' => 'oauth.checkrole:deliveryman'], function(){
+        Route::get('pedidos', function(){
+            return [
+                'id' => '1',
+                'client' => 'Pedro - Entregador',
+                'total' => 10
+            ];
+        });
     });
 });
